@@ -61,3 +61,37 @@ This repository contains C++ implementations of fundamental data structures and 
 This project serves as a learning exercise during my study of Data Structures (Spring 2025). It’s intended for educational purposes and to help others understand the internal logic of classic data structures and algorithms.
 
 ---
+
+## 📁 Project File Structure
+
+DATA STRUCTURES
++---Heap
+|       Heap.h
+|       
++---Linked Lists
+|       Ordered DLL.h
+|       Ordered SLL.h
+|       SLL.h
+|       Unordered SLL.h
+|       
++---Queue
+|       Priority Queue.h
+|       Queue With Circular Array.h
+|       Queue With SLL.h
+|       
++---Sorting Algorithms
+|       Bubble Sort.cpp
+|       Counting Sort.cpp
+|       Insertion Sort.cpp
+|       Merge Sort.cpp
+|       Quick Sort.cpp
+|       Selection Sort.cpp
+|       Shell Sort.cpp
+|       
++---Stack
+|       Stack With Array.h
+|       Stack With SLL.h
+|       
+\---Tree
+        BST.h
+        
