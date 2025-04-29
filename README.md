@@ -64,34 +64,10 @@ This project serves as a learning exercise during my study of Data Structures (S
 
 ## 📁 Project File Structure
 
-DATA STRUCTURES
-+---Heap
-|       Heap.h
-|       
-+---Linked Lists
-|       Ordered DLL.h
-|       Ordered SLL.h
-|       SLL.h
-|       Unordered SLL.h
-|       
-+---Queue
-|       Priority Queue.h
-|       Queue With Circular Array.h
-|       Queue With SLL.h
-|       
-+---Sorting Algorithms
-|       Bubble Sort.cpp
-|       Counting Sort.cpp
-|       Insertion Sort.cpp
-|       Merge Sort.cpp
-|       Quick Sort.cpp
-|       Selection Sort.cpp
-|       Shell Sort.cpp
-|       
-+---Stack
-|       Stack With Array.h
-|       Stack With SLL.h
-|       
-\---Tree
-        BST.h
-        
+
++---Linked Lists | Ordered DLL.h | Ordered SLL.h | SLL.h | Unordered SLL.h |
++---Queue | Priority Queue.h | Queue With Circular Array.h | Queue With SLL.h |
++---Sorting Algorithms | Bubble Sort.cpp | Counting Sort.cpp | Insertion Sort.cpp | Merge Sort.cpp | Quick Sort.cpp | Selection Sort.cpp | Shell Sort.cpp |
++---Stack | Stack With Array.h | Stack With SLL.h |
+---Tree BST.h
+
