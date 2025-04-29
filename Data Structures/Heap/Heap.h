@@ -14,13 +14,13 @@ protected:
     int parent(int i) { return (i-1) / 2; }
     bool compare(T a, T b) { return comp(a,b); }
 
-    void buildHeap()
+    void buildHeap() // O(nlog(n))
     {
         for (int i = heap.size()/2 - 1; i >= 0; --i)
             heapify(heap, i, heap.size());
     }
 
-    void heapify(vector <T> & heap, int i, int n)
+    void heapify(vector <T> & heap, int i, int n) // O(log(n))
     {
         int l = left(i);
         int r = right(i);
@@ -39,15 +39,15 @@ protected:
 public:
     Heap() {}
 
-    Heap(vector <T> v)
+    Heap(vector <T> v) // O(nlog(n))
     {
         heap = v;
         buildHeap();
     }
 
-    bool isEmpty() { return heap.empty(); }
+    bool isEmpty() { return heap.empty(); } // O(1)
 
-    void display()
+    void display() // O(n)
     {
         cout << "[ ";
         for (int i = 0; i < heap.size(); ++i)
@@ -57,14 +57,14 @@ public:
 
     T getTop() { return heap[0]; }
 
-    void deleteTop()
+    void deleteTop() // O(log(n))
     {
         swap(heap.front(), heap.back());
         heap.pop_back();
         heapify(heap, 0, heap.size());
     }
 
-    void insert(T val)
+    void insert(T val) // O(log(n))
     {
         int i = heap.size();
         heap.push_back(val);
@@ -75,14 +75,14 @@ public:
         }
     }
 
-    T extractTop()
+    T extractTop() // O(log(n))
     {
         T top = getTop();
         deleteTop();
         return top;
     }
 
-    void changeKey(int i, T key)
+    void changeKey(int i, T key) // O(log(n))
     {
         if(!compare(heap[i], key) && heap[i] != key)
             throw invalid_argument("New key is violate heap Property");
@@ -94,7 +94,7 @@ public:
         }
     }
 
-    vector <T> heapSort()
+    vector <T> heapSort() // O(nlog(n))
     {
         vector <T> v = heap;
         for (int i = v.size()-1; i > 0; --i)

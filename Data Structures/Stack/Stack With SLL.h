@@ -31,7 +31,7 @@ public:
         }
         cout << "[ ";
         list.print();
-        cout << "+]\n";
+        cout << "]\n";
     }
 
     T Top() const // O(1)
