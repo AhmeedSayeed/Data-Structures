@@ -2,12 +2,13 @@
 #define DATA_STRUCTURES_HEAP_H
 
 #include <bits\stdc++.h>
+#include "../Vector/Vector.h"
 using namespace std;
 
 template <class T, class Compare = less<T>>
 class Heap {
 protected:
-    vector <T> heap;
+    Vector <T> heap;
     Compare comp;
     int left(int i) { return 2*i + 1; }
     int right(int i) { return 2*i + 2; }
@@ -20,7 +21,7 @@ protected:
             heapify(heap, i, heap.size());
     }
 
-    void heapify(vector <T> & heap, int i, int n) // O(log(n))
+    void heapify(Vector <T> & heap, int i, int n) // O(log(n))
     {
         int l = left(i);
         int r = right(i);
@@ -41,7 +42,8 @@ public:
 
     Heap(vector <T> v) // O(nlog(n))
     {
-        heap = v;
+        for (int i = 0; i < v.size(); ++i)
+            heap.push_back(v[i]);
         buildHeap();
     }
 
@@ -96,13 +98,18 @@ public:
 
     vector <T> heapSort() // O(nlog(n))
     {
-        vector <T> v = heap;
+        Vector <T> v;
+        for (int i = 0; i < heap.size(); ++i)
+            v.push_back(heap[i]);
         for (int i = v.size()-1; i > 0; --i)
         {
             swap(v[i], v[0]);
             heapify(v, 0, i);
         }
-        return v;
+        vector <T> v1;
+        for (int i = 0; i < heap.size(); ++i)
+            v1.push_back(heap[i]);
+        return v1;
     }
 };
 
