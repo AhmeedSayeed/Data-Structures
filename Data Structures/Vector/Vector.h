@@ -65,6 +65,11 @@ public:
             throw out_of_range("Vector is empty");
         return data[sz-1];
     }
+    
+    ~Vector()
+    {
+        delete [] data;
+    }
 };
 
 #endif //DATA_STRUCTURES_VECTOR_H
