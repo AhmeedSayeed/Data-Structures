@@ -26,9 +26,9 @@ protected:
         int l = left(i);
         int r = right(i);
         int max = i;
-        if(l < n && compare(heap[max],heap[l]))
+        if(l < n && compare(heap[l],heap[max]))
             max = l;
-        if(r < n && compare(heap[max],heap[r]))
+        if(r < n && compare(heap[r],heap[max]))
             max = r;
         if(max != i)
         {
@@ -70,7 +70,7 @@ public:
     {
         int i = heap.size();
         heap.push_back(val);
-        while(i > 0 && compare(heap[parent(i)], heap[i]))
+        while(i > 0 && compare(heap[i], heap[parent(i)]))
         {
             swap(heap[parent(i)], heap[i]);
             i = parent(i);
@@ -86,10 +86,10 @@ public:
 
     void changeKey(int i, T key) // O(log(n))
     {
-        if(!compare(heap[i], key) && heap[i] != key)
+        if(!compare(key, heap[i]) && heap[i] != key)
             throw invalid_argument("New key is violate heap Property");
         heap[i] = key;
-        while(i > 0 && compare(heap[parent(i)], heap[i]))
+        while(i > 0 && compare(heap[i], heap[parent(i)]))
         {
             swap(heap[parent(i)], heap[i]);
             i = parent(i);
